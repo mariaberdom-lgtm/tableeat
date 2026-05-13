@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TableEat — Reserva mesa de última hora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR (componente Bootstrap: Navbar con toggler responsivo) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-cup-hot-fill text-accent"></i> TableEat
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="busqueda.html">Restaurantes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Para restaurantes</a></li>
+                <li class="nav-item"><a class="btn btn-outline-dark btn-sm" href="#">Iniciar sesión</a></li>
+                <li class="nav-item"><a class="btn btn-accent btn-sm" href="#">Registrarse</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO (sistema de grid Bootstrap col-lg-6 / col-lg-6) -->
+<section class="hero py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="badge bg-light text-dark border mb-3">Disponibilidad en tiempo real</span>
+                <h1 class="display-3 fw-bold lh-1 mb-3">Mesa libre,<br><em class="text-accent">en una hora.</em></h1>
+                <p class="lead text-muted mb-4">Encuentra y reserva mesa en restaurantes con disponibilidad inmediata cerca de ti. Filtra por estilo, cocina, precio y ambiente.</p>
+
+                <!-- Buscador (form-floating + input groups) -->
+                <div class="card border-0 shadow-sm p-3">
+                    <div class="row g-2">
+                        <div class="col-md-5">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="ubicacion" placeholder="Ubicación" value="Madrid Centro">
+                                <label for="ubicacion"><i class="bi bi-geo-alt"></i> Ubicación</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="fecha">
+                                <label for="fecha">Fecha</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-floating">
+                                <select class="form-select" id="personas">
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5+</option>
+                                </select>
+                                <label for="personas">Personas</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-grid">
+                            <a href="busqueda.html" class="btn btn-accent h-100"><i class="bi bi-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Restaurante" class="img-fluid rounded-4 shadow">
+                    <div class="hero-floating-card card border-0 shadow p-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="status-dot"></div>
+                            <div>
+                                <strong class="d-block">3 mesas libres</strong>
+                                <small class="text-muted">a 5 min de ti · hasta 22:30</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED (Cards en grid responsivo: col-lg-4 / col-md-6 / col-12) -->
+<section class="py-5 bg-cream">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
+            <div>
+                <h2 class="fw-bold mb-1">Disponibles ahora</h2>
+                <p class="text-muted mb-0">Mesas libres en los próximos 90 minutos</p>
+            </div>
+            <a href="busqueda.html" class="btn btn-link text-dark">Ver todos <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <a href="restaurante.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 shadow-sm h-100 card-restaurant">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" class="card-img-top" alt="">
+                        <span class="badge bg-success position-absolute m-3"><i class="bi bi-circle-fill"></i> 2 mesas</span>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-1">
+                                <small class="text-muted">Italiano · €€</small>
+                                <small><i class="bi bi-star-fill text-warning"></i> 4.7</small>
+                            </div>
+                            <h5 class="card-title mb-1">Trattoria Lucca</h5>
+                            <small class="text-muted"><i class="bi bi-geo-alt"></i> Malasaña · 8 min</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="restaurante.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 shadow-sm h-100 card-restaurant">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" class="card-img-top" alt="">
+                        <span class="badge bg-warning text-dark position-absolute m-3"><i class="bi bi-circle-fill"></i> 1 mesa</span>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-1">
+                                <small class="text-muted">Japonés · €€€</small>
+                                <small><i class="bi bi-star-fill text-warning"></i> 4.9</small>
+                            </div>
+                            <h5 class="card-title mb-1">Sora Omakase</h5>
+                            <small class="text-muted"><i class="bi bi-geo-alt"></i> Chamberí · 12 min</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="restaurante.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 shadow-sm h-100 card-restaurant">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" class="card-img-top" alt="">
+                        <span class="badge bg-success position-absolute m-3"><i class="bi bi-circle-fill"></i> 4 mesas</span>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-1">
+                                <small class="text-muted">Mediterráneo · €€</small>
+                                <small><i class="bi bi-star-fill text-warning"></i> 4.5</small>
+                            </div>
+                            <h5 class="card-title mb-1">Casa Olivar</h5>
+                            <small class="text-muted"><i class="bi bi-geo-alt"></i> Salamanca · 6 min</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CÓMO FUNCIONA (3 columnas con iconos) -->
+<section id="como-funciona" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Cómo funciona</h2>
+            <p class="text-muted">Tres pasos. Cero llamadas.</p>
+        </div>
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="step-icon mx-auto"><i class="bi bi-1-circle-fill"></i></div>
+                <h5 class="mt-3">Filtra</h5>
+                <p class="text-muted">Indica zona, hora y estilo. Vemos qué hay libre ahora.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="step-icon mx-auto"><i class="bi bi-2-circle-fill"></i></div>
+                <h5 class="mt-3">Elige</h5>
+                <p class="text-muted">Compara fotos, valoraciones y precio en un vistazo.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="step-icon mx-auto"><i class="bi bi-3-circle-fill"></i></div>
+                <h5 class="mt-3">Reserva</h5>
+                <p class="text-muted">Confirmación instantánea por email. Sin tarjeta.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <strong>TableEat</strong> · Práctica 3 — Entorno Web II · CEU 2025-2026
+            </div>
+            <div class="col-md-6 text-md-end">
+                <small class="text-white-50">Bermello · González · Lara — Grupo 3</small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

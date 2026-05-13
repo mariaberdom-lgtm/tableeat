@@ -1,0 +1,110 @@
+/* TableEat — Personalización sobre Bootstrap 5
+   Variables de marca + ajustes mínimos. El grueso visual lo aporta Bootstrap. */
+
+:root {
+  --te-accent: #c8442d;
+  --te-accent-dark: #a8331f;
+  --te-cream: #faf6f0;
+  --te-dark: #1a1a1a;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--te-dark);
+}
+
+h1, h2, h3, .navbar-brand, .display-3 {
+  font-family: 'Fraunces', Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.text-accent { color: var(--te-accent) !important; }
+.bg-cream { background-color: var(--te-cream); }
+
+.btn-accent {
+  background-color: var(--te-accent);
+  color: white;
+  border: none;
+}
+.btn-accent:hover {
+  background-color: var(--te-accent-dark);
+  color: white;
+}
+
+.hero { background: linear-gradient(180deg, #fff 0%, var(--te-cream) 100%); }
+.hero-img-wrap { position: relative; }
+.hero-floating-card {
+  position: absolute;
+  bottom: 20px;
+  left: -30px;
+  max-width: 240px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  background: #198754;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.2);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(25, 135, 84, 0.1); }
+}
+
+.card-restaurant {
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.card-restaurant:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+.card-restaurant .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--te-cream);
+  color: var(--te-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.confirm-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #d1e7dd;
+  color: #198754;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.map-placeholder {
+  height: 200px;
+  background: var(--te-cream);
+  border: 2px dashed #d4cdc1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  text-align: center;
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.4em 0.7em;
+}
+
+.btn-accent:focus { box-shadow: 0 0 0 0.25rem rgba(200, 68, 45, 0.25); }
