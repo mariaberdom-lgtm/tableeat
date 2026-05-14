@@ -85,7 +85,7 @@
                     <h5 class="fw-bold mb-3">Reservar mesa</h5>
                     <p class="text-success mb-3"><i class="bi bi-circle-fill"></i> Hay 2 mesas libres ahora mismo</p>
 
-                    <form name="reserva" method="POST" data-netlify="true" action="/confirmacion.html">
+                    <form name="reserva" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/confirmacion.html">
                         <!-- Atributo data-netlify="true" → Netlify procesa este formulario automáticamente -->
                         <input type="hidden" name="form-name" value="reserva">
 
